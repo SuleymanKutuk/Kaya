@@ -1,0 +1,49 @@
+{% extends 'baseDashboard.html.twig' %}
+
+
+{% block title %}Services index{% endblock %}
+
+{% block body %}
+<main style="margin-top: 58px;">
+	<div class="container pt-4">
+    <h1>Services index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Slug</th>
+                <th>Status</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for service in services %}
+            <tr>
+                <td>{{ service.id }}</td>
+                <td>{{ service.title }}</td>
+                <td>{{ service.description }}</td>
+                <td>{{ service.image }}</td>
+                <td>{{ service.slug }}</td>
+                <td>{{ service.status ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('app_services_show', {'id': service.id}) }}">show</a>
+                    <a href="{{ path('app_services_edit', {'id': service.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_services_new') }}">Create new</a>
+</div>
+</main>
+
+{% endblock %}

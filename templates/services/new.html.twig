@@ -1,0 +1,14 @@
+{% extends 'baseDashboard.html.twig' %}
+
+{% block title %}New Services{% endblock %}
+
+{% block body %}
+<main style="margin-top: 58px;">
+	<div class="container pt-4">
+    <h1>Create new Services</h1>
+
+    {{ include('services/_form.html.twig') }}
+
+    <a href="{{ path('app_services_index') }}">back to list</a>
+    </div></main>
+{% endblock %}

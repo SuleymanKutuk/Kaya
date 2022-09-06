@@ -1,0 +1,17 @@
+{% extends 'baseDashboard.html.twig' %}
+
+
+{% block title %}Edit Services{% endblock %}
+
+{% block body %}
+<main style="margin-top: 58px;">
+	<div class="container pt-4">
+    <h1>Edit Services</h1>
+
+    {{ include('services/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_services_index') }}">back to list</a>
+
+    {{ include('services/_delete_form.html.twig') }}
+    </div></main>
+{% endblock %}
